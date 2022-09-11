@@ -37,21 +37,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
    <img width="500px" src="https://s1.o7planning.com/vi/11823/images/17226826.png" align="center" alt="GitHub Readme Stats" /> <br>
   <h3> &nbsp; Cơ sở dữ liệu sử dụng trong ứng dụng này là MySQL, SQL Server, PostGres hoặc Oracle hoặc bất kỳ một cơ sở dữ liệu nào khác mà bạn quen thuộc. </h3> <br>
    <img width="500px" src="https://s1.o7planning.com/vi/11823/images/17226880.png" align="center" alt="GitHub Readme Stats" /> <br>
-  <h3> &nbsp; Khai báo các thư viện Spring Social vào project của bạn: </h3>
-    <div class="df-fragment df-cktext-default">
-    <ol>
-      <li>spring-security-oauth2</li>
-      <li>spring-social-core</li>
-      <li>spring-social-config</li>
-      <li>spring-social-security</li>
-      <li>spring-social-facebook</li>
-      <li>spring-social-twitter</li>
-      <li>spring-social-github</li>
-      <li>spring-social-linkedin</li>
-      <li>spring-social-google</li>
- </ol>
-
-</div>
+  <h3> &nbsp; Khai báo các thư viện Spring Social vào project của bạn: </h3><br>
 <h3> &nbsp; Nội dung đầy đủ của tập tin pom.xml: </h3><br>
 <h4> &nbsp; pom.xml </h4> <br>
 
