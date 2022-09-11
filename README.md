@@ -417,6 +417,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
    <br> <img width="700px" src="https://www.codejava.net/images/articles/frameworks/springboot/oauth-google/provider_in_users_table.png" alt="GitHub Readme Stats" /> <br>
 <br> <p>Các giá trị có thể có cho cột này là LOCAL và GOOGLE (hằng số enum).</p><br>
 
+
   # 5.  Cập nhật trang đăng nhập
   Tiếp theo, thêm siêu liên kết Đăng nhập bằng Google vào trang đăng nhập tùy chỉnh của bạn với URL sau:<br>
  <div id="highlighter_191398" class="syntaxhighlighter  xml  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1</font></font></div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xml plain">&lt;</code><code class="xml keyword">a</code> <code class="xml color1">th:href</code><code class="xml plain">=</code><code class="xml string">"/@{/oauth2/authorization/google}"</code><code class="xml plain">&gt;Login with Google&lt;/</code><code class="xml keyword">a</code><code class="xml plain">&gt;</code></div></div></td></tr></tbody></table></div>
@@ -458,8 +459,6 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
       </form>
       
 ```
- 
- 
   # 6.  Mã người dùng OAuth tùy chỉnh và các lớp dịch vụ người dùng OAuth
   Tiếp theo, chúng ta cần mã hóa một lớp triển khai giao diện OAuth2User được xác định bởi Spring OAuth2, như sau:<br>
 
@@ -527,6 +526,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
   
  Ở đây, chúng tôi ghi đè phương thức <strong> loadUser () </strong> sẽ được Spring OAuth2 gọi khi xác thực thành công và nó trả về một đối tượng<strong> CustomOAuth2User </strong> mới . <br>
  
+ 
   # 7.  Định cấu hình bảo mật mùa xuân cho xác thực OAuth2
   Tiếp theo, chúng ta cần cập nhật lớp cấu hình Spring Security để kích hoạt xác thực OAuth cùng với đăng nhập biểu mẫu thông thường. Vì vậy, hãy cập nhật phương thức <strong> cấu hình (HttpSecurity) </strong> như sau: <br>
   
@@ -563,6 +563,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
   <div id="highlighter_259123" class="syntaxhighlighter  java"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1</font></font></div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">.antMatchers(</code><code class="java string">"/oauth/**"</code><code class="java plain">).permitAll()</code></div></div></td></tr></tbody></table></div>
   Như vậy là đủ cho cấu hình OAuth2 cơ bản với Spring Boot. Bây giờ bạn có thể kiểm tra đăng nhập bằng Google, nhưng chúng ta hãy đi xa hơn - hãy đọc các phần bên dưới.<br>
   
+  
   # 8.  Triển khai Trình xử lý Thành công Xác thực
   Bởi vì chúng tôi cần xử lý một số lôgic sau khi đăng nhập thành công bằng Google, ví dụ: cập nhật thông tin người dùng trong cơ sở dữ liệu - vì vậy hãy thêm mã sau để định cấu hình trình xử lý thành công xác thực:<br>
 
@@ -587,6 +588,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
               })
 ```
   Phương thức<strong> onAuthenticationSuccess () </strong>sẽ được Spring OAuth2 gọi khi đăng nhập thành công bằng Google, vì vậy tại đây chúng tôi có thể thực hiện các lôgic tùy chỉnh của mình - bằng cách sử dụng lớp <strong> UserService </strong> - được mô tả trong phần tiếp theo.<br>
+  
   
   # 9. Đăng ký người dùng mới khi xác thực OAuth thành công
   Chúng tôi triển khai phương thức <strong> processOAuthPostLogin () </strong> trong lớp <strong> UserService</strong> như sau:<br>
@@ -637,7 +639,6 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
             public User getUserByUsername(@Param("username") String username);
         }
 ```
-  
   # 10. Kiểm tra Đăng nhập bằng Tài khoản Google
   Tải xuống dự án mẫu trong phần Tệp đính kèm bên dưới. Chạy SpringBootSocialJpaApplication và truy cập ứng dụng tại<strong> URL http: // localhost: 8080 </strong>. Nhấp vào Xem tất cả sản phẩm và trang đăng nhập xuất hiện. Nhấp vào Đăng nhập bằng Google, và bạn sẽ thấy biểu mẫu Đăng nhập bằng Google, giống như sau:<br>
   <div align="center">
