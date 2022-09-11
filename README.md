@@ -366,7 +366,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         spring.jpa.hibernate.ddl-auto=update
         spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
 ```
-
+<br>
    <h3> &nbsp; 3.3  Cấu hình Security & Spring Social </h3> 
    <br> <img width="700px" src="https://s1.o7planning.com/vi/11823/images/17246902.png" align="center" alt="GitHub Readme Stats" /> <br>
   
@@ -402,8 +402,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
 
 ```
 
-<br>
-<p>Nhà cung cấp là một loại enum, đơn giản như sau: </p> <br>
+<br> <p>Nhà cung cấp là một loại enum, đơn giản như sau: </p> <br>
    
 ```md
     package net.codejava;
