@@ -264,7 +264,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
  <img width="600px" src="https://user.oc-static.com/upload/2019/11/21/15742940638228_pasted%20image%200%20%2810%29.png" align="center" alt="GitHub Readme Stats" />
 <h3> &nbsp; 3.2 Cấu hình DataSource </h3> 
 <h4> &nbsp; Các thông tin về cơ sở dữ liệu cần được cấu hình trong tập tin application.properties: </h4> 
-<h4> &nbsp; 3.2.1 : application.properties (MySQL) </h4> <br>
+<h4> &nbsp; &nbsp; 3.2.1 : application.properties (MySQL) </h4> <br>
 
 ```md
 
@@ -287,10 +287,10 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
 ```
 <br>
-
-```md
-        <div >  <h4> &nbsp; 3.2.2 : application.properties (Mssql-Jdbc Driver) </h4></div>
+<h4> &nbsp; &nbsp; 3.2.2 : application.properties (Mssql-Jdbc Driver) </h4> <br>
         
+```md
+     
         spring.thymeleaf.cache=false      
         # ===============================
         # DATABASE
@@ -310,9 +310,11 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         spring.jpa.hibernate.ddl-auto=update
         spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.SQLServer2012Dialect
 ```
+<br> 
+ <h4> 3.2.3 : application.properties (PostGres) </h4><br>
+ 
 ```md
- <div class="df-fragment df-text-properties">
-        <div> <h4> 3.2.3 : application.properties (PostGres) </h4></div>
+
         
         spring.thymeleaf.cache=false
 
@@ -338,9 +340,11 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         # Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented.
         spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
 ```
-```md
-        <div><h4> &nbsp; 3.2.4 : application.properties (Oracle) </h4></div>
+<br>
+<h4> &nbsp; 3.2.4 : application.properties (Oracle) </h4>,br>
         
+```md
+     
         spring.thymeleaf.cache=false
 
         # ===============================
