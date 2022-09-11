@@ -21,17 +21,13 @@ Trước tiên, hãy làm theo video này để tạo ID ứng dụng khách Goo
 # 2. Khai báo sự phụ thuộc cho ứng dụng khách Spring Boot OAuth2
 Bên cạnh phần phụ thuộc Spring Security, bạn cần thêm một phần phụ thuộc mới vào tệp dự án Maven để sử dụng Spring Boot OAuth2 Client API giúp đơn giản hóa đáng kể việc tích hợp một lần cho các ứng dụng Spring Boot.<br> <br>
 Vì vậy, hãy khai báo phụ thuộc sau: <br>
- <div>
-     
-        <!-- https://mvnrepository.com/artifact/org.springframework.security.oauth.boot/spring-security-oauth2-autoconfigure -->
+>     <!-- https://mvnrepository.com/artifact/org.springframework.security.oauth.boot/spring-security-oauth2-autoconfigure -->
         <dependency>
             <groupId>org.springframework.security.oauth.boot</groupId>
             <artifactId>spring-security-oauth2-autoconfigure</artifactId>
             <version>2.1.3.RELEASE</version>
         </dependency>
 
-
- </div>
 ### Hiding individual stats
 
 To hide any specific stats, you can pass a query parameter `&hide=` with comma-separated values.
