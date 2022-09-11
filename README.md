@@ -341,7 +341,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
 ```
 
 <br>
-<h4> &nbsp; 3.2.4 : application.properties (Oracle) </h4>,br>
+<h4> &nbsp; 3.2.4 : application.properties (Oracle) </h4> <br>
         
 ```md
      
@@ -372,8 +372,9 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
   
   # 4.  Cập nhật lớp thực thể người dùng và bảng người dùng
   Khi người dùng đăng nhập bằng tài khoản Google của chính mình, ứng dụng sẽ lưu trữ thông tin của người dùng (email và nhà cung cấp xác thực) trong cơ sở dữ liệu - vì vậy chúng tôi cần cập nhật lớp thực thể Người dùng - thêm một trường mới cùng với getter và setter như sau: <br>
-  <div>
 
+
+```md
       package net.codejava;
 
       import javax.persistence.EnumType;
@@ -399,16 +400,19 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
           ...
       }
 
-  </div>
-   <p>Nhà cung cấp là một loại enum, đơn giản như sau: </p>
-  <div>
-  
+```
+
+<br>
+<p>Nhà cung cấp là một loại enum, đơn giản như sau: </p> <br>
+   
+```md
     package net.codejava;
  
     public enum Provider {
         LOCAL, GOOGLE
     }
-  </div>
+```
+
    <p>Sau đó, trong cơ sở dữ liệu, chúng ta có một nhà cung cấp cột mới với kiểu dữ liệu là varchar như sau:</p>
    <br> <img width="700px" src="https://www.codejava.net/images/articles/frameworks/springboot/oauth-google/provider_in_users_table.png" alt="GitHub Readme Stats" /> <br>
 <br> <p>Các giá trị có thể có cho cột này là LOCAL và GOOGLE (hằng số enum).</p><br>
@@ -422,8 +426,8 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
  <img width="500px" src="https://www.codejava.net/images/articles/frameworks/springboot/oauth-google/Login_Google.png" align="center" alt="GitHub Readme Stats" />
 </div> <br>
 Để bạn tham khảo, dưới đây là mã của trang đăng nhập: <br>
- <div>
- 
+
+```md
        <div>
           <h2>Please Login</h2>
           <br/>
@@ -453,13 +457,13 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
       </div>
       </form>
       
- </div>
+```
  
  
   # 6.  Mã người dùng OAuth tùy chỉnh và các lớp dịch vụ người dùng OAuth
   Tiếp theo, chúng ta cần mã hóa một lớp triển khai giao diện OAuth2User được xác định bởi Spring OAuth2, như sau:<br>
-  <div>
-  
+
+```md  
     package net.codejava;
 
     import java.util.Collection;
@@ -495,11 +499,12 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
             return oauth2User.<String>getAttribute("email");     
         }
     }
-  </div>
+```
+
   Ở đây, lớp này bao bọc một thể hiện của lớp OAuth2User, lớp này sẽ được Spring OAuth chuyển qua khi xác thực OAuth thành công. Và lưu ý rằng chúng tôi ghi đè <strong> getName () </strong> và viết mã các phương thức <strong> getEmail () </strong> để trả về tên người dùng và email tương ứng.<br>
   Và tạo một lớp con của <strong> DefaultOAuth2UserService </strong> như sau: <br>
-  <div>
-  
+
+```md  
       package net.codejava;
 
       import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -518,14 +523,14 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
           }
 
       }
-  </div>
+```
   
  Ở đây, chúng tôi ghi đè phương thức <strong> loadUser () </strong> sẽ được Spring OAuth2 gọi khi xác thực thành công và nó trả về một đối tượng<strong> CustomOAuth2User </strong> mới . <br>
  
   # 7.  Định cấu hình bảo mật mùa xuân cho xác thực OAuth2
-  Tiếp theo, chúng ta cần cập nhật lớp cấu hình Spring Security để kích hoạt xác thực OAuth cùng với đăng nhập biểu mẫu thông thường. Vì vậy, hãy cập nhật phương thức <strong> cấu hình (HttpSecurity) </strong> như sau:
-  <div>
+  Tiếp theo, chúng ta cần cập nhật lớp cấu hình Spring Security để kích hoạt xác thực OAuth cùng với đăng nhập biểu mẫu thông thường. Vì vậy, hãy cập nhật phương thức <strong> cấu hình (HttpSecurity) </strong> như sau: <br>
   
+```md
         package net.codejava;
 
         @Configuration
@@ -553,15 +558,15 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
 
         }
         
-  </div>
+```
   Lưu ý rằng bắt buộc phải cho phép truy cập công khai vào <strong> URL / oauth / **  </strong>để có thể truy cập vào Google API khi chuyển hướng:
   <div id="highlighter_259123" class="syntaxhighlighter  java"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1</font></font></div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">.antMatchers(</code><code class="java string">"/oauth/**"</code><code class="java plain">).permitAll()</code></div></div></td></tr></tbody></table></div>
   Như vậy là đủ cho cấu hình OAuth2 cơ bản với Spring Boot. Bây giờ bạn có thể kiểm tra đăng nhập bằng Google, nhưng chúng ta hãy đi xa hơn - hãy đọc các phần bên dưới.<br>
   
   # 8.  Triển khai Trình xử lý Thành công Xác thực
   Bởi vì chúng tôi cần xử lý một số lôgic sau khi đăng nhập thành công bằng Google, ví dụ: cập nhật thông tin người dùng trong cơ sở dữ liệu - vì vậy hãy thêm mã sau để định cấu hình trình xử lý thành công xác thực:<br>
-  <div>
-  
+
+```md
             http.oauth2Login()
               .loginPage("/login")
               .userInfoEndpoint()
@@ -580,13 +585,13 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
                       response.sendRedirect("/list");
                   }
               })
-  </div>
+```
   Phương thức<strong> onAuthenticationSuccess () </strong>sẽ được Spring OAuth2 gọi khi đăng nhập thành công bằng Google, vì vậy tại đây chúng tôi có thể thực hiện các lôgic tùy chỉnh của mình - bằng cách sử dụng lớp <strong> UserService </strong> - được mô tả trong phần tiếp theo.<br>
   
   # 9. Đăng ký người dùng mới khi xác thực OAuth thành công
   Chúng tôi triển khai phương thức <strong> processOAuthPostLogin () </strong> trong lớp <strong> UserService</strong> như sau:<br>
-  <div>
-  
+
+```md
           package net.codejava;
 
           import org.springframework.beans.factory.annotation.Autowired;
@@ -613,10 +618,12 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
               }
 
           }
-  </div>
+```
+
   Tại đây, chúng tôi kiểm tra nếu không tìm thấy người dùng nào trong cơ sở dữ liệu với email đã cho (được truy xuất sau khi đăng nhập thành công với Google), sau đó chúng tôi duy trì một đối tượng Người dùng mới với tên nhà cung cấp là GOOGLE. Bạn cũng có thể viết mã bổ sung để cập nhật thông tin chi tiết của người dùng trong trường hợp người dùng tồn tại trong cơ sở dữ liệu.<br>
 Để bạn tham khảo, dưới đây là mã của lớp <strong> UserRepository </strong>:<br>
-<div>
+
+```md
 
         package net.codejava;
 
@@ -629,7 +636,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
             @Query("SELECT u FROM User u WHERE u.username = :username")
             public User getUserByUsername(@Param("username") String username);
         }
-</div>
+```
   
   # 10. Kiểm tra Đăng nhập bằng Tài khoản Google
   Tải xuống dự án mẫu trong phần Tệp đính kèm bên dưới. Chạy SpringBootSocialJpaApplication và truy cập ứng dụng tại<strong> URL http: // localhost: 8080 </strong>. Nhấp vào Xem tất cả sản phẩm và trang đăng nhập xuất hiện. Nhấp vào Đăng nhập bằng Google, và bạn sẽ thấy biểu mẫu Đăng nhập bằng Google, giống như sau:<br>
