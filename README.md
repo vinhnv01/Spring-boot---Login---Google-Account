@@ -11,14 +11,13 @@ Sau đó, chúng tôi sẽ cập nhật trang đăng nhập cho phép người d
  <img width="600px" src="https://www.codejava.net/images/articles/frameworks/springboot/oauth-google/Login_Google.png" align="center" alt="GitHub Readme Stats" />
 </div>
 
-# 1. Tạo thông tin đăng nhập Google OAuth
-
+<h1> 1. Tạo thông tin đăng nhập Google OAuth </h1> <hr>
 Trước tiên, hãy làm theo video này để tạo ID ứng dụng khách Google OAuth nhằm nhận các khóa truy cập của Google đăng nhập một lần trên API (ID ứng dụng khách và bí mật ứng dụng khách). Lưu ý rằng bạn cần thêm một URI chuyển hướng được ủy quyền như sau:
 <br> <b> <i> http: // localhost: 8080 / login / oauth2 / code / google </b> </i> 
 <br> Trong trường hợp ứng dụng của bạn được lưu trữ với đường dẫn ngữ cảnh riêng, ví dụ / Shopme - thì hãy chỉ định URI chuyển hướng như sau:
 <br> <b> <i> http: // localhost: 8080 / Shopme / login / oauth2 / code / google </b> </i> 
 
-# 2. Khai báo sự phụ thuộc cho ứng dụng khách Spring Boot OAuth2
+<h1> 2. Khai báo sự phụ thuộc cho ứng dụng khách Spring Boot OAuth2 </h1> <hr>
 Bên cạnh phần phụ thuộc Spring Security, bạn cần thêm một phần phụ thuộc mới vào tệp dự án Maven để sử dụng Spring Boot OAuth2 Client API giúp đơn giản hóa đáng kể việc tích hợp một lần cho các ứng dụng Spring Boot.<br> <br>
 Vì vậy, hãy khai báo phụ thuộc sau: <br>
 ```md
@@ -29,7 +28,8 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
             <version>2.1.3.RELEASE</version>
         </dependency>
 ```
- # 3. Định cấu hình thuộc tính Spring OAuth2 cho Google
+<br>
+ <h1> 3. Định cấu hình thuộc tính Spring OAuth2 cho Google </h1> <hr>
  
  Tiếp theo, mở tệp cấu hình Spring Boot ( application.yml ) và chỉ định các thuộc tính cho đăng ký Máy khách OAuth2 cho nhà cung cấp có tên google, như sau: <br>
   <h3> &nbsp; 3.1 Tạo dự án Spring Boot </h3> 
