@@ -264,8 +264,9 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
  <img width="600px" src="https://user.oc-static.com/upload/2019/11/21/15742940638228_pasted%20image%200%20%2810%29.png" align="center" alt="GitHub Readme Stats" />
 <h3> &nbsp; 3.2 Cấu hình DataSource </h3> 
 <h4> &nbsp; Các thông tin về cơ sở dữ liệu cần được cấu hình trong tập tin application.properties: </h4> <br>
+<div> <h4> &nbsp; 3.2.1 : application.properties (MySQL) </h4></div> <br>
+
 ```md
-        <div> <h4> &nbsp; 3.2.1 : application.properties (MySQL) </h4></div>
 
         spring.thymeleaf.cache=false
         # ===============================
@@ -285,6 +286,8 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         spring.jpa.hibernate.ddl-auto=update
         spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
 ```
+<br>
+
 ```md
         <div >  <h4> &nbsp; 3.2.2 : application.properties (Mssql-Jdbc Driver) </h4></div>
         
