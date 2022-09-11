@@ -368,12 +368,11 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
 ```
 <br>
    <h3> &nbsp; 3.3  Cấu hình Security & Spring Social </h3> 
-   <br> <img width="700px" src="https://s1.o7planning.com/vi/11823/images/17246902.png" align="center" alt="GitHub Readme Stats" /> <br>
+   <br> <img width="700px" src="https://s1.o7planning.com/vi/11823/images/17246902.png" align="center" alt="GitHub Readme Stats" /><br>
   
-  # 4.  Cập nhật lớp thực thể người dùng và bảng người dùng
-  
-  Khi người dùng đăng nhập bằng tài khoản Google của chính mình, ứng dụng sẽ lưu trữ thông tin của người dùng (email và nhà cung cấp xác thực) trong cơ sở dữ liệu - vì   vậy chúng tôi cần cập nhật lớp thực thể Người dùng - thêm một trường mới cùng với getter và setter như sau: <br>
-
+  # 4. Cập nhật lớp thực thể người dùng và bảng người dùng <br>
+  Khi người dùng đăng nhập bằng tài khoản Google của chính mình, ứng dụng sẽ lưu trữ thông tin của người dùng (email và nhà cung cấp xác thực) trong cơ sở dữ liệu - vì   vậy chúng tôi cần cập nhật lớp thực thể Người dùng - thêm một trường mới cùng với getter và setter như sau:
+<br>
 ```md
       package net.codejava;
 
