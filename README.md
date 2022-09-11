@@ -287,7 +287,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
 ```
 <br>
-<h4> &nbsp; &nbsp; 3.2.2 : application.properties (Mssql-Jdbc Driver) </h4> <br>
+<h4> &nbsp;  3.2.2 : application.properties (Mssql-Jdbc Driver) </h4> <br>
         
 ```md
      
@@ -310,12 +310,11 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         spring.jpa.hibernate.ddl-auto=update
         spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.SQLServer2012Dialect
 ```
+
 <br> 
- <h4> 3.2.3 : application.properties (PostGres) </h4><br>
+<h4>  &nbsp; 3.2.3 : application.properties (PostGres) </h4><br>
  
 ```md
-
-        
         spring.thymeleaf.cache=false
 
         # ===============================
@@ -340,6 +339,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         # Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented.
         spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
 ```
+
 <br>
 <h4> &nbsp; 3.2.4 : application.properties (Oracle) </h4>,br>
         
@@ -366,6 +366,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         spring.jpa.hibernate.ddl-auto=update
         spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
 ```
+
    <h3> &nbsp; 3.3  Cấu hình Security & Spring Social </h3> 
    <br> <img width="700px" src="https://s1.o7planning.com/vi/11823/images/17246902.png" align="center" alt="GitHub Readme Stats" /> <br>
   
