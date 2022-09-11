@@ -53,7 +53,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
 
 </div>
 <h3> &nbsp; Nội dung đầy đủ của tập tin pom.xml: </h3><br>
-
+<h4> &nbsp; pom.xml </h4> <br>
 
 ```md
 <pre><code class="language-xml hljs">
@@ -263,8 +263,8 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
   <div>  &nbsp; <h3>SpringBootSocialJpaApplication.java</h3></div>
  <img width="600px" src="https://user.oc-static.com/upload/2019/11/21/15742940638228_pasted%20image%200%20%2810%29.png" align="center" alt="GitHub Readme Stats" />
 <h3> &nbsp; 3.2 Cấu hình DataSource </h3> 
-<h4> &nbsp; Các thông tin về cơ sở dữ liệu cần được cấu hình trong tập tin application.properties: </h4> 
-<div>
+<h4> &nbsp; Các thông tin về cơ sở dữ liệu cần được cấu hình trong tập tin application.properties: </h4> <br>
+```md
         <div> <h4> &nbsp; 3.2.1 : application.properties (MySQL) </h4></div>
 
         spring.thymeleaf.cache=false
@@ -284,8 +284,8 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         spring.jpa.show-sql=true
         spring.jpa.hibernate.ddl-auto=update
         spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
- </div>
- <div>
+```
+```md
         <div >  <h4> &nbsp; 3.2.2 : application.properties (Mssql-Jdbc Driver) </h4></div>
         
         spring.thymeleaf.cache=false      
@@ -306,8 +306,8 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         spring.jpa.show-sql=true
         spring.jpa.hibernate.ddl-auto=update
         spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.SQLServer2012Dialect
-</div>
-<div>
+```
+```md
  <div class="df-fragment df-text-properties">
         <div> <h4> 3.2.3 : application.properties (PostGres) </h4></div>
         
@@ -334,8 +334,8 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         # Fix Postgres JPA Error:
         # Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented.
         spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
-</div>
-<div>
+```
+```md
         <div><h4> &nbsp; 3.2.4 : application.properties (Oracle) </h4></div>
         
         spring.thymeleaf.cache=false
@@ -358,7 +358,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         spring.jpa.show-sql=true
         spring.jpa.hibernate.ddl-auto=update
         spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
-</div>
+```
    <h3> &nbsp; 3.3  Cấu hình Security & Spring Social </h3> 
    <br> <img width="700px" src="https://s1.o7planning.com/vi/11823/images/17246902.png" align="center" alt="GitHub Readme Stats" /> <br>
   
