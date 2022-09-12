@@ -20,6 +20,7 @@ Trước tiên, hãy làm theo video này để tạo ID ứng dụng khách Goo
 <h1> 2. Khai báo sự phụ thuộc cho ứng dụng khách Spring Boot OAuth2 </h1> <hr>
 Bên cạnh phần phụ thuộc Spring Security, bạn cần thêm một phần phụ thuộc mới vào tệp dự án Maven để sử dụng Spring Boot OAuth2 Client API giúp đơn giản hóa đáng kể việc tích hợp một lần cho các ứng dụng Spring Boot.<br> <br>
 Vì vậy, hãy khai báo phụ thuộc sau: <br>
+<div>
 ```md
         <!-- https://mvnrepository.com/artifact/org.springframework.security.oauth.boot/spring-security-oauth2-autoconfigure -->
         <dependency>
@@ -28,6 +29,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
             <version>2.1.3.RELEASE</version>
         </dependency>
 ```
+</div>
 <br>
  <h1> 3. Định cấu hình thuộc tính Spring OAuth2 cho Google </h1> <hr>
  
@@ -40,6 +42,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
   <h3> &nbsp; Khai báo các thư viện Spring Social vào project của bạn: </h3><br>
 <h3> &nbsp; Nội dung đầy đủ của tập tin pom.xml: </h3><br>
 <h4> &nbsp; pom.xml </h4> <br>
+<div>
 
 ```md
 <pre><code class="language-xml hljs">
@@ -246,11 +249,13 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">project</span>&gt;</span>
 </code></pre>
 ```
+</div>
   <div>  &nbsp; <h3>SpringBootSocialJpaApplication.java</h3></div>
  <img width="600px" src="https://user.oc-static.com/upload/2019/11/21/15742940638228_pasted%20image%200%20%2810%29.png" align="center" alt="GitHub Readme Stats" />
 <h3> &nbsp; 3.2 Cấu hình DataSource </h3> 
 <h4> &nbsp; Các thông tin về cơ sở dữ liệu cần được cấu hình trong tập tin application.properties: </h4> 
 <h4> &nbsp; &nbsp; 3.2.1 : application.properties (MySQL) </h4> <br>
+<div>
 
 ```md
 
@@ -272,9 +277,11 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         spring.jpa.hibernate.ddl-auto=update
         spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
 ```
+</div>
 <br>
 <h4> &nbsp;  3.2.2 : application.properties (Mssql-Jdbc Driver) </h4> <br>
-        
+<div>
+   
 ```md
      
         spring.thymeleaf.cache=false      
@@ -296,9 +303,11 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         spring.jpa.hibernate.ddl-auto=update
         spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.SQLServer2012Dialect
 ```
+</div>
 
 <br> 
 <h4>  &nbsp; 3.2.3 : application.properties (PostGres) </h4><br>
+ <div>
  
 ```md
         spring.thymeleaf.cache=false
@@ -325,10 +334,11 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         # Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented.
         spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
 ```
-
+</div>
 <br>
 <h4> &nbsp; 3.2.4 : application.properties (Oracle) </h4> <br>
-        
+<div>
+
 ```md
      
         spring.thymeleaf.cache=false
@@ -352,6 +362,8 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         spring.jpa.hibernate.ddl-auto=update
         spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
 ```
+</div>
+
 <br> 
 
    <h3> &nbsp; 3.3  Cấu hình Security & Spring Social </h3> 
@@ -359,6 +371,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
   
   <h1> 4.  Cập nhật lớp thực thể người dùng và bảng người dùng </h1> <hr>
   Khi người dùng đăng nhập bằng tài khoản Google của chính mình, ứng dụng sẽ lưu trữ thông tin của người dùng (email và nhà cung cấp xác thực) trong cơ sở dữ liệu - vì vậy chúng tôi cần cập nhật lớp thực thể Người dùng - thêm một trường mới cùng với getter và setter như sau: <br>
+<div>
 
 ```md
       package net.codejava;
@@ -386,9 +399,11 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
           ...
       }
 ```
+</div>
 <br>
 
    <p>Nhà cung cấp là một loại enum, đơn giản như sau: </p> <br>
+<div>
 ```md
     package net.codejava;
  
@@ -396,6 +411,7 @@ Vì vậy, hãy khai báo phụ thuộc sau: <br>
         LOCAL, GOOGLE
     }
 ```
+</div>
 <br>
    <p>Sau đó, trong cơ sở dữ liệu, chúng ta có một nhà cung cấp cột mới với kiểu dữ liệu là varchar như sau:</p>
    <br> <img width="700px" src="https://www.codejava.net/images/articles/frameworks/springboot/oauth-google/provider_in_users_table.png" alt="GitHub Readme Stats" /> <br>
